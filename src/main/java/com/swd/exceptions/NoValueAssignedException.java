@@ -1,4 +1,4 @@
-package exceptions;
+package com.swd.exceptions;
 
 public class NoValueAssignedException extends Exception {
 	

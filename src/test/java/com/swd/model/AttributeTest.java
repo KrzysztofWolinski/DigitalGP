@@ -1,11 +1,11 @@
-package model;
+package com.swd.model;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import exceptions.NoValueAssignedException;
+import com.swd.exceptions.NoValueAssignedException;
 
 public class AttributeTest {
 

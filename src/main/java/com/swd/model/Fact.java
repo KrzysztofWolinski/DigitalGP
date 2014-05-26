@@ -1,6 +1,6 @@
-package model;
+package com.swd.model;
 
-import exceptions.NoValueAssignedException;
+import com.swd.exceptions.NoValueAssignedException;
 
 public class Fact {
 	private Evaluable e;

@@ -1,5 +1,14 @@
-package dao;
+package com.swd.dao;
+
+import java.util.ArrayList;
+
+import com.swd.model.Attribute;
 
 public class AttributeDao {
-	// TODO loading attributes
+	public ArrayList<Attribute> getOutputAttributes() {
+		
+		// TODO
+		return null;
+		
+	}
 }

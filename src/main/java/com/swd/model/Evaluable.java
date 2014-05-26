@@ -1,6 +1,6 @@
-package model;
+package com.swd.model;
 
-import exceptions.NoValueAssignedException;
+import com.swd.exceptions.NoValueAssignedException;
 
 public interface Evaluable {
 	Boolean getValue() throws NoValueAssignedException;

@@ -1,4 +1,4 @@
-package model;
+package com.swd.model;
 
 public enum Operation {
 	OR,

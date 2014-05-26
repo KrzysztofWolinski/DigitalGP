@@ -1,11 +1,12 @@
-package core;
+package com.swd.core;
 
 import java.util.ArrayList;
 
-import model.Attribute;
-import model.Fact;
-import dao.AttributeDao;
-import dao.FactDao;
+import com.swd.dao.AttributeDao;
+import com.swd.dao.FactDao;
+import com.swd.model.Attribute;
+import com.swd.model.Fact;
+
 
 public class Core {
 	private ArrayList<Attribute> inputList;
@@ -13,10 +14,12 @@ public class Core {
 	private ArrayList<Fact> facts;
 	
 	public void prepareData(ArrayList<Attribute> input) {
-		FactDao factDao;
-		AttributeDao attributeDao;
+		FactDao factDao = new FactDao();
+		AttributeDao attributeDao = new AttributeDao();
 		
-		// TODO loading data
+		inputList = input;
+		outputList = attributeDao.getOutputAttributes();
+		facts = factDao.getFacts();
 	}
 	
 	public ArrayList<Attribute> analyseData() {
