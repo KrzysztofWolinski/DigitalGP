@@ -9,7 +9,7 @@ public class Fact {
 		this.e = e;
 	}
 	
-	public boolean getValue() {
+	public boolean getValue() throws NoValueAssignedException {
 		try {
 			return e.getValue();
 		}
