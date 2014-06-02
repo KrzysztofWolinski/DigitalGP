@@ -1,0 +1,6 @@
+# Ignore files below:
+
+# Ignore maven files
+/target
+
+.classpath
