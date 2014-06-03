@@ -13,6 +13,8 @@
         <property name="hbm2ddl.auto">update</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		
+		<mapping class="pl.pwr.swd.model.Evaluable" />
 		<mapping class="pl.pwr.swd.model.Attribute" />
+		<mapping class="pl.pwr.swd.model.Fact" />
     </session-factory>
 </hibernate-configuration>

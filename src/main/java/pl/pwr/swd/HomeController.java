@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import pl.pwr.swd.model.Attribute;
+import pl.pwr.swd.model.Fact;
 
 /**
  * Handles requests for the application home page.
@@ -45,10 +46,11 @@ public class HomeController {
 		try {
 			tx = session.beginTransaction();
 			Attribute a = new Attribute();
-			a.setDescription("This is the first description.");
-			a.setValue(true);
+			a.setDescription("This is the second description.");
+			a.setValue(false);
+			Fact f = new Fact(a);
 			// Put into db
-			session.save(a);
+			session.save(f);
 			tx.commit();
 		} catch (HibernateException e) {
 			if(tx != null) tx.rollback();
