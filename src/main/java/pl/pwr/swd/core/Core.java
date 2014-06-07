@@ -15,12 +15,15 @@ public class Core {
 		// For each possible permutation
 		for (int i = 0; i < Math.pow(2, outputList.size()); i++) {
 			
+			System.out.println();
+			
 			// Set values of output for testing facts
 			for (int j = 0; j < outputList.size(); j++) {
 				int mask = (int)Math.pow(2, j);
 				boolean value = (i & mask) == 0 ? false : true;
 				outputList.get(j).setValue(value);
 			}
+			
 			
 			// Check if Facts are true or not
 			boolean isPermutationValid = true;
@@ -37,7 +40,12 @@ public class Core {
 			}
 			
 			if (isPermutationValid) {
-				returnList.add((ArrayList<Attribute>) outputList.clone());
+				ArrayList<Attribute> addList = new ArrayList<Attribute>();
+				
+				for (Attribute a : outputList) {
+					addList.add(new Attribute(a.getDescription(), a.getValue()));
+				}
+				returnList.add(addList);
 			}
 		}
 		

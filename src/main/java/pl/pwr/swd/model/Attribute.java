@@ -51,4 +51,8 @@ public class Attribute extends Evaluable {
 	public void setValue(Boolean value) {
 		this.value = value;
 	}
+	
+	public String toString() {
+		return this.description + ": " + this.value;
+	}
 }

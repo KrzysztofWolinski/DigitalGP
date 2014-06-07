@@ -66,4 +66,30 @@ public class HomeController {
 		return "home";
 	}
 	
+	@Transactional
+	@RequestMapping(value = "/analyse", method = RequestMethod.GET)
+	public String analyseRequestGet(Locale locale, Model model) {
+		
+		// Read attributes from the db
+		
+		// Display input values to be filled by user
+				
+		return "analyse";
+	}
+	
+	@Transactional
+	@RequestMapping(value = "/analyse", method = RequestMethod.POST)
+	public String analyseRequestPost(Locale locale, Model model) {
+		
+		// Read attributes from the db
+		
+		// Receive input from the user
+		
+		// Call Core method
+		
+		// Return results
+				
+		return "analyse";
+	}
+	
 }
