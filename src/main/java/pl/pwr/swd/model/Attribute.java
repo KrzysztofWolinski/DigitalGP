@@ -17,12 +17,28 @@ public class Attribute extends Evaluable {
 	@Column(name="value")
 	private Boolean value = null;
 	
-	public String getDescription() {
-		return description;
+	public Attribute(String description) {
+		this.description = description;
 	}
+
+	public Attribute() {
+		this.description = null;
+		this.value = null;
+	}
+
+	public Attribute(String description, boolean value) {
+		this.description = description;
+		this.value = value;
+	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
 	public Boolean getValue() throws NoValueAssignedException {
 		if (value != null) {
 			return new Boolean(value);
