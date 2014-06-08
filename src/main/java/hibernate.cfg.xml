@@ -16,5 +16,6 @@
 		<mapping class="pl.pwr.swd.model.Evaluable" />
 		<mapping class="pl.pwr.swd.model.Attribute" />
 		<mapping class="pl.pwr.swd.model.Fact" />
+		<mapping class="pl.pwr.swd.model.Expression" />
     </session-factory>
 </hibernate-configuration>
