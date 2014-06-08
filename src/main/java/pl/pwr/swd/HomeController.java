@@ -3,6 +3,7 @@ package pl.pwr.swd;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.transaction.Transactional;
@@ -16,9 +17,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import pl.pwr.swd.model.Attribute;
-import pl.pwr.swd.model.Fact;
 
 /**
  * Handles requests for the application home page.
@@ -40,23 +38,6 @@ public class HomeController {
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
 		String formattedDate = dateFormat.format(date);
-
-		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			Attribute a = new Attribute();
-			a.setDescription("This is the second description.");
-			a.setValue(false);
-			Fact f = new Fact(a);
-			// Put into db
-			session.save(f);
-			tx.commit();
-		} catch (HibernateException e) {
-			if(tx != null) tx.rollback();
-			System.out.println(e);
-			System.out.println("Dupa :(");
-		}
 		
 		model.addAttribute("serverTime", formattedDate );
 		LinkedList<String> list = new LinkedList<String>();
@@ -66,15 +47,17 @@ public class HomeController {
 		return "home";
 	}
 	
-	@Transactional
 	@RequestMapping(value = "/analyse", method = RequestMethod.GET)
 	public String analyseRequestGet(Locale locale, Model model) {
 		
-		// Read attributes from the db
-		
-		// Display input values to be filled by user
-				
-		return "analyse";
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		List<?> input_attributes = session.createQuery(
+			    "from evaluables as ev where ev.is_input = ?")
+			    .setBoolean(0, true)
+			    .list();
+		model.addAttribute("input_attributes", input_attributes);
+					
+		return "input";
 	}
 	
 	@Transactional

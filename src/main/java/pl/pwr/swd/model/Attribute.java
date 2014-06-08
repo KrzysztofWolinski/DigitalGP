@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import pl.pwr.swd.exceptions.NoValueAssignedException;
 
@@ -14,9 +15,21 @@ public class Attribute extends Evaluable {
 
 	@Column(name="description")
 	private String description;
-	@Column(name="value")
+	
+	@Column(name="is_input")
+	private Boolean isInput = false;
+	
+	@Transient
 	private Boolean value = null;
 	
+	public Boolean getIsInput() {
+		return isInput;
+	}
+
+	public void setIsInput(Boolean isInput) {
+		this.isInput = isInput;
+	}
+
 	public Attribute(String description) {
 		this.description = description;
 	}
@@ -26,9 +39,9 @@ public class Attribute extends Evaluable {
 		this.value = null;
 	}
 
-	public Attribute(String description, boolean value) {
+	public Attribute(String description, boolean isInput) {
 		this.description = description;
-		this.value = value;
+		this.isInput = isInput;
 	}
 
 	public void setDescription(String description) {

@@ -15,16 +15,17 @@ import pl.pwr.swd.model.Operation;
 public class TestDataInit {
 
 	private static void initData() {
-		Attribute goraczka = new Attribute("goraczka", false);
+		Attribute goraczka = new Attribute("goraczka", true);
 		Attribute kaszel = new Attribute("kaszel", true);
-		Attribute bol_glowy = new Attribute("bol glowy", false);
-		Attribute bole_miesni = new Attribute("bole miesni", false);
+		Attribute bol_glowy = new Attribute("bol glowy", true);
+		Attribute bole_miesni = new Attribute("bole miesni", true);
 		Attribute katar = new Attribute("katar", true);
 		
 		Attribute przeziebienie = new Attribute("przeziebienie");
 		Attribute grypa = new Attribute("grypa");
 		Attribute ok = new Attribute("ok");
 		Attribute migrena = new Attribute("migrena");
+		
 		
 		ArrayList<Attribute> inputList = new ArrayList<Attribute>();
 		inputList.add(goraczka);
