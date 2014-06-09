@@ -9,6 +9,7 @@
 	Input
 </h1>
 
+
 <form action="/swd/analyse" method="POST">
 	<h1>Please select data for the diagnose:</h1>
 	<table>
