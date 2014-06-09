@@ -1,6 +1,7 @@
 package pl.pwr.swd.core;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import pl.pwr.swd.exceptions.NoValueAssignedException;
 import pl.pwr.swd.model.Attribute;
@@ -9,7 +10,7 @@ import pl.pwr.swd.model.Fact;
 
 public class Core {
 	
-	public static ArrayList<ArrayList<Attribute>> analyseData(ArrayList<Attribute> inputList, ArrayList<Fact> facts, ArrayList<Attribute> outputList) throws NoValueAssignedException {
+	public static ArrayList<ArrayList<Attribute>> analyseData(List<Attribute> inputList, List<Fact> facts, List<Attribute> outputList) throws NoValueAssignedException {
 		ArrayList<ArrayList<Attribute>> returnList = new ArrayList<ArrayList<Attribute>>();
 		
 		// For each possible permutation

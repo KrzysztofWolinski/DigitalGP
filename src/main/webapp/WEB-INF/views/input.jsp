@@ -9,13 +9,13 @@
 	Input
 </h1>
 
-<form action="input.jsp" method="POST">
+<form action="/swd/analyse" method="POST">
 	<h1>Please select data for the diagnose:</h1>
 	<table>
-	  <c:forEach items="${list}" var="attribute" varStatus="loop">
+	  <c:forEach items="${input_attributes}" var="attribute" varStatus="loop">
 	    <tr>
 	      <td>${attribute.description}</td>
-	      <td><input type="checkbox" checked="${attribute.value}" /></td>
+	      <td><input name="${attribute.id}" type="checkbox" /></td>
 	    </tr>
 	  </c:forEach>
 	</table>

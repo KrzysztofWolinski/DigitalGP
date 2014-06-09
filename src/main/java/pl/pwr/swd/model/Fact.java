@@ -21,6 +21,10 @@ public class Fact {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Evaluable e;
 	
+	public Fact() {
+		
+	}
+	
 	public Fact(Evaluable e) {
 		this.e = e;
 	}

@@ -25,6 +25,10 @@ public class Expression extends Evaluable {
 	@Column(name = "operation_type")
 	private Operation operation;
 	
+	public Expression() {
+		
+	}
+	
 	public Expression(Evaluable a, Operation operation,  Evaluable b) {
 		this.a = a;
 		this.b = b;
