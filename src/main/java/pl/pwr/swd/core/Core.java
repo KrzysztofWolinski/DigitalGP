@@ -44,7 +44,9 @@ public class Core {
 				ArrayList<Attribute> addList = new ArrayList<Attribute>();
 				
 				for (Attribute a : outputList) {
-					addList.add(new Attribute(a.getDescription(), a.getValue()));
+					Attribute at = new Attribute(a.getDescription(), false);
+					at.setValue(a.getValue());
+					addList.add(at);
 				}
 				returnList.add(addList);
 			}
