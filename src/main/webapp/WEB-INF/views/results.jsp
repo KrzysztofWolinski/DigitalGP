@@ -10,10 +10,12 @@
 </h1>
 
 	<table>
-	  <c:forEach items="${list}" var="attribute" varStatus="loop">
+	  <c:forEach items="${result_list}" var="attributes" varStatus="loop">
 	    <tr>
-	      <td>${attribute.description}</td>
-	      <td><input type="checkbox" checked="${attribute.value}" /></td>
+	    	<td>${attributes[0].description}</td>
+	    	<c:forEach items=${attributes} var="attribute" varStatus="poop">
+		      <td><input type="checkbox" checked="${attribute.value} disabled="true" /></td>
+	        </c:forEach>
 	    </tr>
 	  </c:forEach>
 	</table>
